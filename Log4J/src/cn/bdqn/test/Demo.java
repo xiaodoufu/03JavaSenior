@@ -11,5 +11,6 @@ public class Demo {
 		logger.info("info  MSG ");
 		logger.debug("debug  MSG ");
 		logger.trace("trace  MSG ");
+
 	}
 }
