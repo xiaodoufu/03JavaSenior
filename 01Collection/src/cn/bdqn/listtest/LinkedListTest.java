@@ -48,7 +48,6 @@ public class LinkedListTest {
 			News news = (News) object;
 			System.out.println(news);
 		}
-
 		// 查询某个元素在集合中的位置
 		System.out.println("news4在集合中的位置：" + list.indexOf(news4));
 

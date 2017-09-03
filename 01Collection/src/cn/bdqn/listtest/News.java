@@ -78,7 +78,7 @@ public class News {
 		 *  003.remove()：删除元素
 		 */
 		// 清空整个集合
-		list.clear();
+		list.clear(); // 底层的数组 长度还是之前的长度！
 		// 判断集合是否为空
 		System.out.println("集合是否为空:" + list.isEmpty());
 		Iterator it = list.iterator();
