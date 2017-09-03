@@ -21,10 +21,10 @@
   Set
   Map
   
- java中的集合框架是 jdk给我们提供好的一些列接口或者类的集合！
+  java中的集合框架是 jdk给我们提供好的一些列接口或者类的集合！
    他们都存在于  java.util包中！ 
-  
-  
+   
+   
   public interface List<E> extends Collection<E>
   public interface Set<E> extends Collection<E>
   
