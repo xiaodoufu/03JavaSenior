@@ -111,6 +111,18 @@ public class MapTest {
 		}
 		end = System.currentTimeMillis();
 		log.debug("使用Iterator循环的用时：" + (end - start));
-
 	}
+
+	/***
+	 * 
+	 *  HashMap 和  HashTable 的区别
+	 *   01.HashMap    线程不安全 但是性能高
+	 *      HashTable  线程   安全 但是性能低
+	 *   02.HashMap 底层是哈希表实现的，每一个元素一个key -value键值对！
+	 *        key和value都可以为null！
+	 *      HashTable的key和value都不可以为null！
+	 *   03.历史版本不同
+	 *      HashMap    1.2
+	 *      HashTable  1.0
+	 */
 }

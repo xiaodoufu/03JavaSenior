@@ -52,6 +52,23 @@ public class SetTest {
 		        002.(k = e.key) == key || key.equals(k)
 		      如果相等  直接覆盖
 		   不相等 通过next的变量 将值 新增到entry！  
+		   
+		   
+		   
+		   
+		   HashSet 和 TreeSet的区别
+		   
+		  01. HashSet底层是哈希表实现的！
+		      TreeSet底层是二叉树实现的！
+		  02. HashSet存放的数据是无序的！
+		      TreeSet存放的数据是有序的！
+		  03. HashSet可以存放 null！但是只能是一个null!
+		      TreeSet不可以存放null！
+		  04. HashSet底层是由HashMap实现！ 
+		      TreeSet底层是由TreeMap实现！ 
+		  05. HashSet是线程不安全的！ 单线程是安全！
+		      TreeSet是线程安全的！   
+		   
 		 */
 
 	}
