@@ -98,4 +98,45 @@ public class PackageTest {
 		character.charValue();
 	}
 
+	@Test
+	public void test06() {
+		int a = 127;
+		int b = 127;
+		System.out.println(a == b);
+	}
+
+	@Test
+	public void test07() {
+		Integer a = new Integer(1);
+		Integer b = new Integer(1);
+		System.out.println(a == b);
+	}
+
+	@Test
+	public void test08() {
+		/**
+		 * Integer a = 127;
+		Integer b = 127;
+		System.out.println(a == b);  //true
+		 */
+
+		Integer a = 128;
+		Integer b = 128;
+		/**
+		 * 01.128是int类型  是基本数据类型
+		 * 02.a是integer类型 是包装类
+		 * 03.想把基本数据类型转换成包装类
+		 * 04.就需要使用valueOf(128)
+		 * 05.观看底层代码得知
+		 *  
+		public static Integer valueOf(int i) {
+		assert IntegerCache.high >= 127;
+		if (i >= IntegerCache.low && i <= IntegerCache.high)
+		    return IntegerCache.cache[i + (-IntegerCache.low)];
+		return new Integer(i);    当我们传入的值 大于127或者小于-128就会创建新对象
+		}
+		 */
+		System.out.println(a == b);
+	}
+
 }
