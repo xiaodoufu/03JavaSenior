@@ -68,11 +68,22 @@
   04.Random
        随机数
      
+  05.String StringBuffer StringBuilder的区别
   
-  
-  05.String StringBuffer StringBuilder
+     001.在执行速度方法
+        StringBuilder  >  StringBuffer   >  String
+        
+     002.线程安全  多线程情况下
+        StringBuilder： 单线程使用，多线程不安全
+        StringBuffer ： 多线程安全
+              String ： 数据量小的时候使用
+     003.String本身是不可变的！每当我们操作一次字符串，就会创建一个新的对象！
+     StringBuilder，StringBuffer每次操作都是一个对象！
+
   
   06.Date   SimpleDateFormat
+  
+  
     
   07.Calendar
   
