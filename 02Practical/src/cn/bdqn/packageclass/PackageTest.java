@@ -47,4 +47,55 @@ public class PackageTest {
 		// 编译报错 Character character1 = new Character("1");
 	}
 
+	/**
+	*除了Character，都有对应的parse的方法
+	*/
+	@Test
+	public void test03() {
+		Integer i = new Integer("5");
+		System.out.println(i + 1);
+		System.out.println(Integer.parseInt("54321") + 1);
+		// 转换进制 把2进制的1011转换成10进制的数字
+		System.out.println("10对应的2进制：" + Integer.parseInt("1011", 2));
+
+		/**    String num = "27";
+		    System.out.println(Integer.parseInt(num) + 1);
+
+		    Double.parseDouble("20");
+		    Byte.parseByte("1");
+		    Short.parseShort("1");
+		    System.out.println(1 + 1 + "2"+1); // 221
+		    System.out.println("1" + (1 + 2)); // 13
+		*/
+	}
+
+	@Test
+	public void test04() {
+		System.out.println(Integer.toBinaryString(28)); // 转换成2进制
+		System.out.println(Integer.toHexString(28)); // 转换成16进制
+		System.out.println(Integer.toOctalString(28)); // 转换成8进制
+	}
+
+	/**
+	* valueOf 
+	* 把基本数据类型转换成对应的封装类
+	* 除了Character没有传递String类型的参数
+	* 
+	* xxxValue
+	* 把xxx类型转换成xxx对应的基本数据类型
+	*/
+	@Test
+	public void test05() {
+		// 基本数据类型和对应封装类之间的转换 我们称之为 装箱和拆箱操作
+		int a = 5;
+		Integer integer = Integer.valueOf(a); // 装箱 把基本数据类型a转换成了包装类integer
+		integer.intValue(); // 拆箱 把包装类integer转换成基本数据类型
+
+		Double d = Double.valueOf(20.0);
+		double h = d.doubleValue();
+
+		Character character = Character.valueOf('a');
+		character.charValue();
+	}
+
 }
