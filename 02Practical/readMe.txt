@@ -19,13 +19,33 @@
     004.构造方法必须是私有的！ 防止外部访问！
     
        
-    
-   
-    
-  
-  
-  
+
   02.基本数据类型对应的包装类（封装类）
+      包装类：
+      001.基本数据类型能点出来方法吗？        不能！！ 对应的包装类可以！
+      002.集合中可以存放基本数据类型吗？    不能！！ 对应的包装类可以！
+      003.就是把基本数据类型转换成对象！
+    
+    
+      byte      Byte
+      short     Short
+      int       Integer
+      long      Long
+      float     Float
+      double    Double
+ 上面的六种，都是数值类型！ 都继承了Number类！ 
+ 然后Number实现了Serializable接口！
+      
+      boolean   Boolean
+      char      Character
+ 他们两个都实现 了Serializable接口！   
+
+
+  如果有个方法让我们传递一个Serializable类型的参数！
+  我们可不可以传递8种基本数据类型的封装类呢？    可以！
+
+
+  
   
   03.String StringBuffer StringBuilder
   
