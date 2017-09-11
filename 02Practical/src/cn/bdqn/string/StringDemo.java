@@ -109,6 +109,17 @@ public class StringDemo {
 
 	@Test
 	public void test11() {
+		String a = new String("abc").intern();
+		/**
+		 * intern() :  说  把a指向了 常量池中的“abc”
+		 */
+		String b = new String("abc");
+		String c = "abc";
+		System.out.println(a == c);
+	}
+
+	@Test
+	public void test12() {
 		// 01.定义变量
 		String name = "xiaohei";
 		// 02.定义操作字符串的次数
