@@ -13,7 +13,6 @@ import java.io.OutputStream;
 public class DataStreamDemo {
 
 	public static void main(String[] args) throws Exception {
-
 		InputStream in = new FileInputStream("e:/U2/music.mp3");
 		// 从电脑中读取某个2进制文件
 		DataInputStream dis = new DataInputStream(in);
