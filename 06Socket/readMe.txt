@@ -83,13 +83,47 @@ UDP协议： （User Datagram Protocol） 用户数据报协议
  
     C/S
  
-  Socket              客户端
-  ServerSocket        服务器
+ TCP协议中的Socket
+ 
+  ServerSocket        服务器     指定端口号
+  Socket              客户端     ip  +  端口号 
   
   
- 我们去超市购物的例子！
- 
- 
+ UDP协议中的Socket
+  
+  DatagramSocket     接收  发送      指定端口号
+  DatagramPacket     打包  拆包      ip  +  端口号 
+  
+  
+  服务器的操作
+  01.打开服务器  设置端口号
+  02.开始接收客户端的信息DatagramSocket 
+  03.拆包DatagramPacket
+  04.需要给客户端响应
+  05.打包DatagramPacket
+  06.发送给客户端DatagramSocket 
+  
+  
+  客户端的操作
+  01.创建客户端  找到服务器的ip和端口号
+  02.打包DatagramPacket
+  03.发送给服务器DatagramSocket 
+  04.接收服务器的响应DatagramSocket 
+  05.拆包DatagramPacket
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  
  
  
