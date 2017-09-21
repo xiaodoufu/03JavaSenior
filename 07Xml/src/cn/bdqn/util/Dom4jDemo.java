@@ -1,11 +1,15 @@
 package cn.bdqn.util;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
 
 public class Dom4jDemo {
 	/**
@@ -31,6 +35,11 @@ public class Dom4jDemo {
 
 	public static void main(String[] args) {
 		getDocument(); // 加载dom树 获取根节点
+		// 新增节点insertByXml();
+		// 删除节点deleteByXml();
+		// 修改
+		updateByXml();
+
 		listByXml(); // 遍历所有节点属性
 	}
 
@@ -73,17 +82,55 @@ public class Dom4jDemo {
 				if (!studentName.getTextTrim().equals("")) {
 					System.out.println("学生在做的事情：" + studentName.getTextTrim());
 				}
-
 			}
-
 		}
-
 	}
 
 	/**
 	 * 新增xml文件的内容
 	 */
 	public static void insertByXml() {
+		// 在内存中创建需要的节点
+		Element classElement = root.addElement("class");
+		// 给class节点增加属性
+		classElement.addAttribute("name", "研四");
+		classElement.addAttribute("location", "四楼");
+		// 以上的结果是 <class name="研四" location="四楼"></class> 在内存中
+		// 给class增加子节点
+		Element studentElement = classElement.addElement("student");
+		studentElement.addAttribute("name", "小屁孩");
+		studentElement.addAttribute("age", "80");
+		/**
+		 * 以上的结果在内存中是 
+		 * <class name="研四" location="四楼">
+		 *    <student name="小屁孩"  age="80"> </student>
+		 *  </class> 
+		 *  
+		 *  仅限于在内存中  并没有保存到 xml文件中
+		 */
+		saveXml();
+
+	}
+
+	/**
+	 * 在内存中的数据 持久化到 xml文件中
+	 */
+	private static void saveXml() {
+		XMLWriter writer = null;
+		OutputFormat format = null;
+		try {
+			format = OutputFormat.createPrettyPrint(); // 格式化我们新增的xml节点
+			writer = new XMLWriter(new FileWriter("src/MySchool.xml"), format);
+			writer.write(document);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
@@ -92,12 +139,36 @@ public class Dom4jDemo {
 	 */
 	public static void deleteByXml() {
 
+		// 根据根节点 遍历所有的子节点
+		Iterator eClass = root.elementIterator();
+		while (eClass.hasNext()) { // 循环找到需要删除的节点
+			Element name = (Element) eClass.next();
+			if (name.attributeValue("name").equals("研三")) {
+				// 找到父节点 让父节点删除
+				eClass.remove();
+			}
+		}
+		saveXml(); // 持久化保存
 	}
 
 	/**
 	 * 修改xml文件的内容
 	 */
 	public static void updateByXml() {
+
+		// 根据根节点 遍历所有的子节点
+		Iterator eClass = root.elementIterator();
+		while (eClass.hasNext()) { // class
+			Element name = (Element) eClass.next();
+			Iterator studentElement = name.elementIterator();
+			while (studentElement.hasNext()) { // student
+				Element studentName = (Element) studentElement.next();
+				if (studentName.attributeValue("name").equals("小屁孩")) {
+					studentName.setAttributeValue("name", "老男孩");
+				}
+			}
+		}
+		saveXml(); // 持久化保存
 
 	}
 

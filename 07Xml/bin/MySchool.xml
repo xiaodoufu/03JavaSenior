@@ -1,17 +1,20 @@
-<school>
-    <class  name="研一"  location="一楼">
-          <student  name="小黑1" age="15">小黑1在吃饭</student>
-          <student  name="小黑2" age="16"></student>
-          <student  name="小黑3" age="17">小黑3在撸串</student>
-    </class>
-    
-    <class  name="研二" location="二楼">
-          <student  name="小白1" age="10"></student>
-          <student  name="小白2" age="11">小白2在喝酒</student>
-          <student  name="小白3" age="12"></student>
-    </class>
-    
-    <class  name="研三" location="三楼">
-    </class>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<school> 
+
+  <class name="研一" location="一楼"> 
+    <student name="小黑1" age="15">小黑1在吃饭</student>  
+    <student name="小黑2" age="16"/>  
+    <student name="小黑3" age="17">小黑3在撸串</student> 
+  </class>  
+  
+  <class name="研二" location="二楼"> 
+    <student name="小白1" age="10"/>  
+    <student name="小白2" age="11">小白2在喝酒</student>  
+    <student name="小白3" age="12"/> 
+  </class>  
+  
+  <class name="研四" location="四楼"> 
+    <student name="老男孩" age="80"/> 
+  </class> 
 </school>
