@@ -1,0 +1,30 @@
+<school>  <!--存放所有学生的根节点  -->
+       
+        <!-- name,age我们称之为节点的属性
+                        小黑   15 是我们节点的属性值
+                         哈哈是我们节点的文本属性值-->
+   <student name="小黑1"  age="15">哈哈1</student> 
+   <student name="小黑2" age="16">哈哈2</student> 
+   <student name="小黑3" age="17">哈哈3</student> 
+
+
+   <teacher name="教师1" age="5">嘿嘿1</teacher>
+   <teacher name="教师2" age="6">嘿嘿2</teacher>
+   <teacher name="教师3" age="7">嘿嘿3</teacher>
+   
+   <grade name="一年级">   <!-- 年级 -->
+        <class  name="一班">  <!-- 班级 -->
+        </class>
+        <class  name="二班">
+        </class>
+   </grade>
+   <grade name="二年级">
+       <class  name="一班">
+        </class>
+        <class  name="二班">
+        </class>
+   </grade>
+   
+
+</school>
+
