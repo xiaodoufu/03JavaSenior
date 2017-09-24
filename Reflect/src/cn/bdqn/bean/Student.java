@@ -9,10 +9,8 @@ public class Student {
 
 	public int age; // 学生年龄
 	protected String name;// 学生姓名
-	private Date birthday;// 学生生日
+	private Date birthday = new Date();// 学生生日
 	char sex; // 学生性别
-
-	static int a = 50;
 
 	static {
 		System.out.println("这是Student类中的静态代码块");
