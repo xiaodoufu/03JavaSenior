@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<users> 
+  <user userName="admin" password="admin" phoneNum="15753049998"/>  
+  <user userName="xiaodoufu" password="common" phoneNum="17788788873" realTalkTime="0" realFlow="0" realSendMsg="0" money="22.0" consumMoney="58.0">
+    <servicePackage name="话唠套餐" sendMsg="30" talkTime="500"/>
+  </user>
+</users>
